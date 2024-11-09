@@ -17,9 +17,12 @@ const pdfParse = require('pdf-parse');  // Import pdf-parse
 const Pdf = require('./models/Pdf'); // Import the PDF model
 const authMiddleware = require('./middleware/authMiddleware');
 const cancellationRoutes = require('./routes/cancellationRoutes');
+const refundRoutes = require("./routes/refundRoutes");
+
 // <<<<<<< HEAD
 // const contactUsRoutes = require('./routes/contactUsRoute');
 const windowIosRoutes = require('./routes/windowsIosRoutes');
+
 // const getLinkRoutes = require('./routes/getLinksRoute');
 // =======
 // >>>>>>> parent of 38f1b1c (add contact us and get linkes api)
@@ -54,6 +57,7 @@ app.use("/auth", authRoute);
 app.use("/person", personRoute);
 app.use("/ticket", ticketRoute);
 app.use('/cancellation', cancellationRoutes);
+app.use('/refund', refundRoutes);
 
 // app.use('/contact-us', contactUsRoutes);
 app.use('/windowIos', windowIosRoutes);
