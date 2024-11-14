@@ -22,6 +22,10 @@ const refundRoutes = require("./routes/refundRoutes");
 // <<<<<<< HEAD
 // const contactUsRoutes = require('./routes/contactUsRoute');
 const windowIosRoutes = require('./routes/windowsIosRoutes');
+const contactUsRoutes = require('./routes/contactUsRoute');
+
+const getLinkRoutes = require('./routes/getLinksRoute');
+const getAllApiData = require("./routes/getAllApiRoute")
 
 // const getLinkRoutes = require('./routes/getLinksRoute');
 // =======
@@ -62,7 +66,8 @@ app.use('/refund', refundRoutes);
 // app.use('/contact-us', contactUsRoutes);
 app.use('/windowIos', windowIosRoutes);
 // app.use("/getAllLinks", getLinkRoutes)
-
+app.use("/getAllLinks", getLinkRoutes);
+app.use("/getAllApiData", getAllApiData);
 
 
 
