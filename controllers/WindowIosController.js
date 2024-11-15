@@ -19,6 +19,30 @@ exports.createWindowIos = async (req, res) => {
     }
 
 }
+exports.updateWindowIos = async (req, res) => {
+    // const { id } = req.params;
+    const { title, window, ios, _id } = req.body;
+
+    try {
+        // Find the link by ID and update it
+        const updatedLink = await WindowsIos.findByIdAndUpdate(
+            _id,
+            { title, window, ios },
+            { new: true, runValidators: true } // Returns the updated document and runs validation
+        );
+
+        // If no link is found, return an error
+        if (!updatedLink) {
+            return res.status(404).json({ success: false, message: "Link not found" });
+        }
+
+        // Successfully updated
+        res.status(200).json({ success: true, data: updatedLink });
+    } catch (error) {
+        console.error("Error updating link:", error);
+        res.status(500).json({ success: false, message: "Server error" });
+    }
+}
 
 exports.getAllWindowIos = async (req, res) => {
     try {
