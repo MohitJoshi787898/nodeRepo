@@ -8,7 +8,7 @@ router.post("/createRefund", refund.createRefund)
 
 // GET route to retrieve all refund requests
 
-// router.get("/refunds", refund.getRefunds)
+router.get("/refunds", refund.getAllRefunds)
 // router.get("/refunds", refund.getRefunds)
 
 module.exports = router;

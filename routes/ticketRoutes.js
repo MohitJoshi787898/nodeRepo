@@ -8,5 +8,8 @@ router.get("/", (req, res) => {
 
 })
 router.get("/ticket/:ticketNumber", ticketController?.getTicketByNumber);
-router.post("/ticket", ticketController?.createTicket)
+router.delete("/ticket/:ticketNumber", ticketController?.deleteTicket);
+router.post("/ticket", ticketController?.createTicket);
+router.get("/tickets", ticketController?.getAllTickets);
+
 module.exports = router;
