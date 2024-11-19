@@ -20,3 +20,12 @@ exports.createRefund = async (req, res) => {
         })
     }
 }
+
+exports.getAllRefunds = async (req, res) => {
+    try {
+        const refunds = await refund.find();
+        res.json({ success: true, data: refunds });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Server error" });
+    }
+}
