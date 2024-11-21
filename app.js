@@ -27,6 +27,7 @@ const contactUsRoutes = require('./routes/contactUsRoute');
 const getLinkRoutes = require('./routes/getLinksRoute');
 const getAllApiData = require("./routes/getAllApiRoute");
 const phoneRoutes = require("./routes/phoneRoute");
+const serverRoutes = require("./routes/serverRoutes");
 
 // const getLinkRoutes = require('./routes/getLinksRoute');
 // =======
@@ -70,6 +71,7 @@ app.use('/windowIos', windowIosRoutes);
 app.use("/getAllLinks", getLinkRoutes);
 app.use("/getAllApiData", getAllApiData);
 app.use("/phone", phoneRoutes);
+app.use("/server", serverRoutes);
 
 
 
